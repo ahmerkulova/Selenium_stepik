@@ -1,17 +1,13 @@
 from selenium import webdriver
-from time import sleep
-import math
+import time
 
-link = "http://suninjuly.github.io/find_link_text"
+link = "http://suninjuly.github.io/find_xpath_form"
 
 try:
     browser = webdriver.Chrome()
     browser.get(link)
 
-    hidden_link = browser.find_element_by_link_text(str(math.ceil(math.pow(math.pi, math.e)*10000)))
-    hidden_link.click()
-
-    input1 = browser.find_element_by_tag_name('input')  # tag = <tag></tag>
+    input1 = browser.find_element_by_tag_name('input')
     input1.send_keys("Arina")
     input2 = browser.find_element_by_name('last_name')
     input2.send_keys("Merkul")
@@ -19,9 +15,9 @@ try:
     input3.send_keys("Saint P")
     input4 = browser.find_element_by_id('country')
     input4.send_keys("Russia")
-    button = browser.find_element_by_css_selector("button.btn")  # button tag inside btn class
+    button = browser.find_element_by_xpath("//button[@type='submit']")  # // is path, [] is filter
     button.click()
 
 finally:
-    sleep(30)
+    time.sleep(30)
     browser.quit()
