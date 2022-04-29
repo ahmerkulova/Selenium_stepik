@@ -6,3 +6,4 @@ Stack:
 - Selenium Webdriver 3.14.0
 - Python 3.10.2
 - Google Chrome 101.0.4951.41
+- Pytest 5.1.1
